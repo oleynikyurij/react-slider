@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+
 import './App.css';
 import Grid from 'react-bootstrap/lib/Grid';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
+import styled from 'styled-components';
+import Main from './component/Main';
+import Header from './component/Header';
+import Menu from './component/Menu';
+
+
+const HeaderWrapper = styled.header`
+	width: 100%;
+	height: 49px;
+	opacity: 0.8;
+	background-color: #242424;
+`
+
+const MenuWrapper = styled.div`
+	height: 89px;
+	padding-top: 20px;
+`
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-				<h1>Hello, world!</h1>
-				<SayHay name = "Yura" link = "www.google.com"/>
+			<div className="App">
+			<HeaderWrapper>
+				<Grid>
+					<Header />
+				</Grid>	
+				</HeaderWrapper>
+				<MenuWrapper>	
+					<Grid>
+						<Menu />
+					</Grid>
+				</MenuWrapper>	
+					<Main />
       </div>
     );
   }
 }
 
-function SayHay(props) {
-	return (
-		<div>
-			<h2>Name: {props.name}</h2>
-			<h2>Link: <a href={props.link} >link</a> </h2>
-		</div>
-	);
-}
+
 
 export default App;
