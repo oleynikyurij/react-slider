@@ -27,10 +27,44 @@ const WorkTime = styled.div`
 	}
 `
 
+const Calls = styled.div`
+		color: #2a2a2a;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 24px;
+
+		span {
+			display: block;
+			color: #464646;
+			font-size: 21px;
+			font-weight: 700;	
+		}
+`
+const CallButton = styled.button`
+		width: 176px;
+		height: 48px;
+		color: white;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 22px;
+		width: 173px;
+		height: 45px;
+		background-color: #3fc7db;
+		border-radius: 22px;
+`
+
 class Adress extends React.Component {
 	render(){
 		return(
 			<span>{this.props.addr}</span>
+		);
+	}
+}
+
+class TelNumber extends React.Component {
+	render(){
+		return(
+			<span>{this.props.tel}</span>
 		);
 	}
 }
@@ -49,10 +83,13 @@ class Menu extends React.Component {
 					</WorkTime>
 				</Col>
 				<Col lg = {3}>
-
+					<Calls>
+					Звонки принимаются 24 часа
+					<TelNumber tel = "8 (846) 922 55 44 "></TelNumber>
+					</Calls>
 				</Col>
 				<Col lg = {2}>
-
+					<CallButton>Заказать звонок!</CallButton>
 				</Col>
 			</Row>
 		);
